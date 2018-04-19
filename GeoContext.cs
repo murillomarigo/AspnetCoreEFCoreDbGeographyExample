@@ -11,8 +11,8 @@ namespace geotest
         {
             builder.Entity<Local>(b =>
             {
-                //b.Ignore(x=> x.Ponto);
                 b.Property<string>("Ponto").HasColumnType("sys.geography");
+                //b.Property(x=> x.Ponto).HasColumnType("sys.geography");
             });
         }
         public DbSet<Local> Locais { get; set; }
