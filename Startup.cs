@@ -33,7 +33,7 @@ namespace geotest
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, GeoContext context)
         {
             if (env.IsDevelopment())
             {
@@ -44,6 +44,8 @@ namespace geotest
             };
             app.UseRequestLocalization(rlo);
             app.UseMvc();
+
+            context.Database.EnsureCreated();
         }
     }
 }
