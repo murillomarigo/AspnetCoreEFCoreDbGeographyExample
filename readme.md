@@ -13,7 +13,7 @@ Primeira coisa que eu fiz foi estudar como esse tipo de dado funciona direito no
         [Ponto] [sys].[geography] NOT NULL
     );
 
-### Inseririndo um dado geography
+### Inserindo um dado geography
     insert into dbo.Locais (nome, ponto) values ('Local', geography::STGeomFromText('POINT (-22.951911 -43.2126759)', 4326))
 
 ### Retorna registros ordenados pela distancia de um ponto dado
